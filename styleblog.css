@@ -1,0 +1,58 @@
+*{
+  box-sizing:border-box;
+}
+
+header {
+  background-color: darksalmon;
+  padding: 30px;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  height: 200px;
+  line-height: 0;
+}
+  footer {
+  background-color: Darksalmon;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+nav {
+  float: left;
+  width: 20%;
+  height: 1000px;/* only for demonstration, should be removed */
+  padding: 0px;
+  font-size: 20px;
+  color:darksalmon;
+  border-right: 5px solid darksalmon;
+}
+
+  a{
+    text-decoration:none;
+    color:darksalmon;
+  }
+  .selected{
+    background-color: darksalmon;
+    color:white;
+    display:block;
+  }
+  article {
+    float: left;
+    padding: 20px;
+    width: 70%;
+    height: 500px; /* only for demonstration, should be removed */
+  }
+
+  /* Clear floats after the columns */
+  section:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+  @media (max-width: 600px) {
+    nav, article {
+      width: 100%;
+      height: auto;
+    }

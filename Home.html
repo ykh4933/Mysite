@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BLOG:GAHUI YEOM</title>
+    <link rel="stylesheet" href="styleblog.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+       .video{
+         margin:50px;
+         display: block;
+         text-align: center;
+       }
+       .image{
+         width: 250px;
+         height: 250px;
+       }
+       .about_me{
+         color:#732626;
+         text-align:center;
+         cursor:pointer;
+       }
+
+    </style>
+    <script type='text/javascript'>
+    $(document).ready(function(){
+      $(".about_me").click(function(){
+        $("#detailOfGahui").toggle();
+      });
+    });
+
+    </script>
+
+  </head>
+  <body>
+    <header>
+      <h2><a style="color:white" href="file:///C:/Users/yeom/Desktop/Blog/Home.html">GAHUI YEOM</a></h2>
+    </header>
+
+    <section>
+      <nav>
+        <ul id="navigation">
+
+      </ul>
+      </nav>
+      <script>
+        $(function(){
+          $("#navigation").children("li").each(function(){
+            $(this).mouseover(function(){
+              $(this).css("background-color","#fceee9");
+            });
+            $(this).mouseout(function(){
+              $(this).css("background-color","transparent");
+            });
+          });
+        });
+        </script>
+
+        <article>
+
+        </article>
+        <script>
+        function fetchPage(name){
+          fetch(name).then(function(response){
+            response.text().then(function(text){
+              document.querySelector('article').innerHTML=text;
+            })
+          });
+        }
+        fetch(list).then(function(response){
+          response.text().then(function(text){
+            var items = text.split(',');
+            var i =0;
+            var tags='';
+
+            while(i < items.length){
+              var item = items[i];
+              item=item.trim();
+              var tag = '<li><a href ="#!'+item+'" onclick=" fetchPage(\''+item+'\')">'+item+'</a></li>';
+              var tags= tags+tag;
+              i=i+1;
+            }
+            document.querySelector('#navigation').innerHTML=tags;
+          })
+        });
+
+        </script>
+
+
+  </section>
+
+  <footer>
+  <p>&copy; 2018 by YeomGahui of Site. Web Page Construction 2018.05.15. </p>
+</footer>
+
+  </body>
+</html>
